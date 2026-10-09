@@ -47,6 +47,21 @@
 
         .hero h1 { font-size: 2.5rem; font-weight: 800; color: #ffffff; margin-bottom: 8px; }
         .hero .subtitle { font-size: 1.25rem; color: #38bdf8; font-weight: 600; margin-bottom: 16px; }
+        .hero-intro {
+            max-width: 1020px;
+            margin: 0 auto 24px;
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .profile-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
         .hero .email-link { font-size: 1rem; color: #94a3b8; font-weight: 500; }
         .hero .email-link a { color: #38bdf8; text-decoration: none; }
         .hero .email-link a:hover { text-decoration: underline; }
@@ -86,6 +101,23 @@
         }
 
         .card p { color: #cbd5e1; font-size: 1rem; margin-bottom: 16px; }
+        .card a { color: #38bdf8; text-decoration: none; }
+        .card a:hover { text-decoration: underline; }
+
+        /* Minimal contact section */
+        .contact-band {
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        .contact-band h2 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-band a { color: #38bdf8; text-decoration: none; }
+        .contact-band a:hover { text-decoration: underline; }
 
         /* Tag Pill Badges */
         .badge-grid {
@@ -105,29 +137,59 @@
             font-weight: 600;
         }
 
-        /* Publication Cards */
-        .pub-item {
-            background-color: #0f172a;
-            border: 1px solid #334155;
-            border-left: 4px solid #38bdf8;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+        /* Research interest grid */
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            list-style: none;
         }
 
-        .pub-item:last-child { margin-bottom: 0; }
+        .interest-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px 16px;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            background-color: #0f172a;
+            color: #cbd5e1;
+        }
 
-        .pub-title { font-size: 1.1rem; font-weight: 700; color: #ffffff; margin-bottom: 8px; line-height: 1.4; }
-        .pub-authors { font-size: 0.9rem; color: #94a3b8; margin-bottom: 12px; }
+        .interest-item::before {
+            content: "";
+            flex: 0 0 8px;
+            height: 8px;
+            margin-top: 8px;
+            border-radius: 50%;
+            background-color: #38bdf8;
+        }
+
+        /* Numbered bibliography rows */
+        .pub-item {
+            padding: 16px 0;
+        }
+
+        .pub-item:last-of-type { padding-bottom: 0; }
+
+        .pub-title { 
+            font-size: 1rem; 
+            font-weight: 400; 
+            font-style: italic;
+            color: #ffffff; 
+            margin-bottom: 7px; 
+            line-height: 1.5; 
+        }
+        .pub-authors { font-size: 0.88rem; color: #94a3b8; margin: 0; }
         .pub-authors strong { color: #38bdf8; }
 
-        .pub-meta {
-            display: flex;
-            gap: 20px;
-            font-size: 0.85rem;
-            color: #cbd5e1;
-            font-weight: 600;
+        .pub-category {
+            color: #38bdf8;
+            font-size: 1rem;
+            margin: 20px 0 0;
         }
+
+        .pub-category:first-of-type { margin-top: 0; }
 
         .metric-tag {
             background-color: rgba(34, 197, 94, 0.15);
@@ -136,6 +198,27 @@
             padding: 2px 10px;
             border-radius: 4px;
         }
+
+        /* Editorial article listing */
+        .article-entry {
+            padding: 4px 0 4px 18px;
+            border-left: 3px solid #38bdf8;
+        }
+
+        .article-title {
+            color: #f8fafc;
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        .article-meta {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .article-meta span { color: #38bdf8; font-weight: 600; }
 
         /* Footer */
         footer {
@@ -155,19 +238,16 @@
         <div class="hero-container">
             <div class="avatar-badge">SK</div>
             <h1>Shanthi Karpurapu</h1>
-            <div class="subtitle">Independent Researcher | AI & Software Engineering</div>
-
-            Conducting research at the intersection of Generative AI, Large Language Models (LLMs), Software Engineering, and Automated Acceptance Testing.
-	    Specializing in developer tools, testing frameworks, and scalable system architecture.
-<br><br>
-            <div>
+            <div class="subtitle">Independent Researcher | AI/ML & AI for Software Engineering</div>
+            <p class="hero-intro">
+                Shanthi Karpurapu is an independent researcher in Generative AI and software engineering, with more than a decade of experience leading and developing test automation for enterprise systems in healthcare, banking, and manufacturing. Her research explores how Large Language Models can automate acceptance testing, support developer productivity, and improve software quality assurance. She also studies efficient deep learning for medical applications and computational methods for spectroscopic analysis.
+            </p>
+            <nav class="profile-links" aria-label="Professional profiles">
                 <a href="https://scholar.google.com/citations?user=Tbef9hQAAAAJ&hl=en" target="_blank" class="badge">Google Scholar Profile</a>
-                <a href="https://ieeexplore.ieee.org" target="_blank" class="badge">IEEE Xplore Profile</a>
-                <a href="https://github.com" target="_blank" class="badge">GitHub Repositories</a>
-            </div>
-        <br>    <div class="email-link">
-                Academic & Verification Email: <a href="mailto:s.karpurapu@karpurapuresearch.org">s.karpurapu@karpurapuresearch.org</a>
-            </div>
+                <a href="https://ieeexplore.ieee.org/author/37086088635" target="_blank" class="badge">IEEE Xplore Profile</a>
+                <a href="https://github.com/karpurapus" target="_blank" class="badge">GitHub Repositories</a>
+            </nav>
+        </div>
     </header>
 
     <!-- Main Content -->
@@ -175,46 +255,84 @@
 
         <!-- Research Overview -->
         <section class="card">
-            <h2> Research Focus & Areas</h2>
-            <p>Independent research focused on the application of Large Language Models (LLMs) and Deep Learning to automated software engineering, with a specific concentration on Behavior-Driven Development (BDD) test formulation and developer tooling assistants.</p>
-            
-            <div class="badge-grid">
-                <span class="badge">Large Language Models (LLMs)</span>
-                <span class="badge">Generative AI</span>
-                <span class="badge">Software Engineering (SE)</span>
-                <span class="badge">Automated Test Formulation</span>
-                <span class="badge">Behavior-Driven Development</span>
-                <span class="badge">Deep Learning</span>
-            </div>
+            <h2> Research Interests </h2>
+            <ul class="interest-grid">
+                <li class="interest-item">Large Language Models for software engineering</li>
+                <li class="interest-item">Automated acceptance test formulation and Behavior-Driven Development (BDD)</li>
+                <li class="interest-item">AI-assisted developer tools and programming copilots</li>
+                <li class="interest-item">Self-healing and continuous test automation</li>
+                <li class="interest-item">Lightweight deep learning architectures for edge and medical applications</li>
+            </ul>
         </section>
 
         <!-- Peer-Reviewed Publications -->
         <section class="card">
-            <h2> Peer-Reviewed Journal Publications</h2>
+            <h2> Publications</h2>
 
-            <!-- Publication 1 -->
-            <div class="pub-item">
-                <div class="pub-title">Comprehensive Evaluation and Insights into the Use of Large Language Models in the Automation of Behavior-Driven Development Acceptance Test Formulation</div>
-                <div class="pub-authors"><strong>S Karpurapu</strong>, S Myneni, U Nettur, LS Gajja, D Burke, T Stiehm, J Payne</div>
-                <div class="pub-meta">
-                    <span>Journal: IEEE Access (2024)</span>
-                    <span class="metric-tag">57+ Citations</span>
+            <h3 class="pub-category">AI for Software Engineering &amp; Testing</h3>
+            <article class="pub-item">
+                <div>
+                    <h4 class="pub-title">Comprehensive Evaluation and Insights into the Use of Large Language Models in the Automation of Behavior-Driven Development Acceptance Test Formulation</h4>
+                    <p class="pub-authors"><span class="metric-tag">IEEE Access</span> · 2024</p>
                 </div>
-            </div>
+            </article>
+            <article class="pub-item">
+                <div>
+                    <h4 class="pub-title">Cypress Copilot: Development of an AI Assistant for Boosting Productivity and Transforming Web Application Testing</h4>
+                    <p class="pub-authors"><span class="metric-tag">IEEE Access, vol. 13</span> · 2025</p>
+                </div>
+            </article>
+            <article class="pub-item">
+                <div>
+                    <h4 class="pub-title">The Role of GitHub Copilot on Software Development: A Perspective on Productivity, Security, Best Practices and Future Directions</h4>
+                    <p class="pub-authors"><span class="metric-tag">arXiv preprint arXiv:2502.13199</span> · 2025</p>
+                </div>
+            </article>
 
-            <!-- Publication 2 -->
-            <div class="pub-item">
-                <div class="pub-title">Cypress Copilot: Development of an AI Assistant for Boosting Productivity and Transforming Web Application Testing</div>
-                <div class="pub-authors">SB Nettur, <strong>S Karpurapu</strong>, U Nettur, LS Gajja</div>
-                <div class="pub-meta">
-                    <span>Journal: IEEE Access, Vol. 13 (2024)</span>
-                    <span class="metric-tag">35+ Citations</span>
+            <h3 class="pub-category">Deep Learning &amp; Scientific Computing</h3>
+            <article class="pub-item">
+                <div>
+                    <h4 class="pub-title">UltraLightSqueezeNet: A Deep Learning Architecture for Malaria Classification With Up to 54x Fewer Trainable Parameters for Resource Constrained Devices</h4>
+                    <p class="pub-authors"><span class="metric-tag">IEEE Access</span> · 2025</p>
                 </div>
-            </div>
+            </article>
+            <article class="pub-item">
+                <div>
+                    <h4 class="pub-title">A Novel Approach for Analysis of FTIR Membrane Spectroscopy</h4>
+                    <p class="pub-authors"><span class="metric-tag">IEEE 7th International Advance Computing Conference (IACC)</span> · 2017</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Invited Talks -->
+        <section class="card">
+            <h2> Invited Talks</h2>
+
+            <article class="article-entry">
+                <h3 class="article-title">Transforming Testing with Generative AI: A Demonstration</h3>
+                <p class="article-meta"><span>Agile DevOps East 2023</span> · Orlando, FL · November 2023</p>
+            </article>
+
+        </section>
+
+        <!-- Articles -->
+        <section class="card">
+            <h2> Articles</h2>
+
+            <article class="article-entry">
+                <h3 class="article-title">Continuous Testing with Self-Healing: Why Is It Important?</h3>
+                <p class="article-meta"><span>StickyMinds</span> · July 13, 2022</p>
+            </article>
 
         </section>
 
     </main>
+
+    <section class="contact-band">
+        <h2>Contact</h2>
+        <p><a href="mailto:s.karpurapuru@karpurapuresearch.org">s.karpurapuru@karpurapuresearch.org</a></p>
+    </section>
 
     <footer>
         &copy; 2026 Shanthi Karpurapu. All rights reserved.
